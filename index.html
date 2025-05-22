@@ -8,31 +8,167 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
+
+
 </head>
 <body>
 
 <div id="header">
     <div class= "container">
         <nav>
-            <img src="images/logo.png" class="logo">
-            <ul>
-                <li><a href="#"> Home</a></li>
-                <li><a href="#"> About Me</a></li>
-                <li><a href="#"> Experience</a></li>
-                <li><a href="#"> Skills</a> </li>
-                <li><a href="#"> Education</a> </li>
-                <li><a href="#"> Projects</a> </li>
-                <li><a href="#"> Additional Information</a> </li>
+            <ul class = "nav-links">
+                <li><a href="#header"> Home</a></li>
+                <li><a href="#about"> About Me</a></li>
+                <li><a href="#projects"> Projects</a> </li>
                 <li><a href="#"> Contact Me</a> </li>
 
             </ul>
         </nav>
         <div class="header-text">
             <p>Computer Science / Cybersecurity Student</p>
-            <h1> Hello, <span> My name is Dillon Tall</span></h1>
+            <h1> Hello, My name is <b>Dillon Tall</b></h1>
         </div>
     </div>
 </div>
+
+<!--About section including  Skills, Experience and Education-->
+<div id = "about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/user.png">
+            </div>
+            <div class="about-col-2">
+            <h1 class ="sub-title">About Me</h1>
+            <p>Computer Science student focused on Cybersecurity with a strong background in IT support. 
+                Experienced in collaborating with faculty on project development and deployment.
+                 Passionate about problem-solving and eager to gain hands-on experience.</p>
+
+                 <div class="tab-titles">
+                    <p class ="tab-links active-link" onclick="opentab('experience')">Experience</p>
+                    <p class ="tab-links active-link" onclick="opentab('education')">Education</p>
+                    <p class ="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class ="tab-links active-link" onclick="opentab('certs')">Certifications and Awards</p>
+
+                 </div>
+
+                 <div class="tab-contents" id="skills">
+                    <ul>
+                        <li><span>Programming Languages</span><br>Python, Java, CSS, HTML. Basic SQL and PHP.</li>
+                        <li><span>Microsoft 365</span><br>Excel, Word, Powerpoint, Copilot</li>
+                        <li><span>Adobe Suite</span><br>Photoshop, Illustrator</li>
+                        <li><span>Customer Service</span><br>User services, helpdesk</li>
+
+                    </ul>
+                 </div>
+
+
+
+                    <div class="tab-contents active-tab" id="experience">
+                    <ul>
+                        <li><span>IT Helpdesk Southern Connecticut State University </span><br><date>August 2024 - Present.</date><br> 
+                            Provide frontline IT support to campus faculty, students, and staff. Resolving a wide range of technical issues 
+                            including account access, software troubleshooting, and physical hardware malfunctions. Actively addressing and 
+                            resolving technical issues through in person assistance, phone calls, and an online support ticket system.  </li>
+
+                        <li><span>Consultant Kelly Services for General Electric</span><br><date>July 2022 - December 2022.</date><br> 
+                            Database conversion project using iManage and GE libraries to transfer data and documents to a more secure environment 
+                            for highly confidential documents. Reviewing documents and pulling critical information into excel spreadsheets. </li>
+
+                            
+
+                    </ul>
+                 </div>
+
+                    
+                    <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>Southern Connecticut State University (SCSU)</span><br><date>August 2022 - Expected Graduation May 2026.</date><br> 
+                           Currently obtaining a Major in Computer Science General, Masters in Cybersecurity, Minor in mathematics. </li>
+
+                        <li><span>Shelton High School</span><br><date>August 2018 - May 2022.</date><br> 
+                           Graduated from highschool </li>
+
+
+                    </ul>
+                 </div>
+
+                    <div class="tab-contents" id="certs">
+                    <ul>
+                        <li><span>Current SCSU GPA: 3.74</span></li>
+                        <li>Deans List 2022 - 2024</li>
+                        <li>Sans Foundation - SEC275 Course</li>
+                        <li>Google Cybersecurity Certificate Course</li>
+                        <li>Cyberstart America CS Club 2021-2022</li>
+                        <li>AP Computer Science High School Class</li>
+
+
+
+
+                    </ul>
+                 </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--Projects Section-->
+<div id="projects">
+    <div class="container">
+        <h1 class="sub-title">My Projects</h1>
+        <div class="work-list">
+
+            <div class="work">
+                <img src="images/Project1.png">
+
+                <div class="layer">
+                    <h3>SCSU WLL Website Capstone Project</h3>
+                    <p>Collaborated with faculty members Miaowei Weng, Erin Larkin, and webmaster
+                         Jian Chan on a capstone project to restructure the World Languages and Literature website. 
+                         Used HTML/CSS, JavaScript, XAMPP, SQL, and other tools to enhance 
+                         accessibility, interactivity, and user experience.</p>
+
+                </div>
+            </div>
+
+            <div class="work">
+                <img src="images/Project2.png">
+
+                <div class="layer">
+                    <h3>SCSU WLL Website Capstone Project</h3>
+                    <p>Awarded first place for final group project—a fully functional, deployed study group scheduler.
+                         The platform enables student sign-in with school credentials, group forum interaction, 
+                         post creation, and messaging. Built using Flask, Python, HTML/CSS, and integrated with a 
+                         database backend, hosted using Google Cloud Platform (GCP).</p>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+        
+    }
+</script>
+
 
 </body>
 </body>
