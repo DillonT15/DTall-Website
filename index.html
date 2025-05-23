@@ -7,7 +7,7 @@
     <title> Dillon Tall Portfolio </title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
+    <script src="https://kit.fontawesome.com/b2fd711b44.js" crossorigin="anonymous"></script>
 
 
 </head>
@@ -17,16 +17,17 @@
     <div class= "container">
         <nav>
             <ul class = "nav-links">
-                <li><a href="#header"> Home</a></li>
+                <li><a href="#header"> Home </a></li>
                 <li><a href="#about"> About Me</a></li>
                 <li><a href="#projects"> Projects</a> </li>
                 <li><a href="#"> Contact Me</a> </li>
+                
 
             </ul>
         </nav>
         <div class="header-text">
-            <p>Computer Science / Cybersecurity Student</p>
-            <h1> Hello, My name is <b>Dillon Tall</b></h1>
+            <p>Computer Science / Cybersecurity Student </p>
+            <h1> Hello, My name is <b>Dillon Tall </b> </h1>
         </div>
     </div>
 </div>
@@ -152,6 +153,46 @@
     </div>
 </div>
 
+
+
+<!---------Contact Me Section----------->
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class = "sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>dillontall15@gmail.com </p>
+                <p><i class="fa-solid fa-phone"></i>1 (203)-242-6605</p>
+                <div class="social-icons">
+                    <a href="https://github.com/DillonT15"><i class="fa-brands fa-github"></i></i></a>
+                    <a href="https://www.linkedin.com/in/dillon-tall-419510317/"><i class="fab fa-linkedin"></i></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100010438547851"><i class="fa-brands fa-facebook"></i></i></a>
+
+                </div>
+                <a href="images/DTallResume.pdf" download class="btn btn2">Download Resume</a>
+            </div>
+            <div class="contact-right">
+                <form name ="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="7" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+        </div>
+        <div class="credits">
+            <p>Website made by Dillon Tall with assistance from https://fontawesome.com/, Southern Connecticut State University WLL Department https://www.southernct.edu/academics/world-languages-and-literatures and GreatStack.</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
 <script>
     var tablinks = document.getElementsByClassName("tab-links");
     var tabcontents = document.getElementsByClassName("tab-contents");
@@ -168,7 +209,26 @@
         
     }
 </script>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwbVAii3uklZaCH-NPlwEV9i6Sg3ci3Fotx0pcKv1jgG8GeV0TOrygehKjz7v7DHcNAtw/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
 
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML = "Successfully sent message!"
+        setTimeout(function(){
+            msg.innerHTML = ""
+        },5000)
+
+        form.reset()
+        
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
 
 </body>
 </body>
