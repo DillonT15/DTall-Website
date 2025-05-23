@@ -21,6 +21,44 @@ body{
 
 }
 
+#sticky-nav {
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 6px 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#sticky-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0.6rem; /* Reduced from 1.2rem to tighten spacing */
+}
+
+#sticky-nav li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 2px; 
+    transition: background-color 0.3s;
+}
+
+
+#sticky-nav li a:hover {
+    background-color: #eee;
+    border-radius: 4px;
+}
+
+
+
 .container{
     padding: 10px 10%;
 }
@@ -114,6 +152,7 @@ nav ul li a:hover::after{
     font-size: 60px;
     font-weight: 600;
     color: #000000;
+    margin-bottom:50px;
 
 }
 
@@ -184,19 +223,52 @@ nav ul li a:hover::after{
     grid-gap: 40px;
     margin-top: 50px;
 }
-.work{
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
 
-}
-.work img{
-    width:100%;
-    border-radius: 10px;
-    display: block;
-
+.project-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
 }
 
+.project-item img {
+  width: 350px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.project-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.project-text h3 {
+  margin-top: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.project-text p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.btn-learn-more {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.btn-learn-more:hover {
+  background-color: #0056b3;
+}
 
 /* --------------contact page ---------------*/
 .contact-left{
@@ -243,6 +315,12 @@ nav ul li a:hover::after{
     display:inline-block;
     background:#007bff;
 }
+.btn.btn3{
+    padding: 5px 10px;
+    display:inline-block;
+    color: black;
+    background:#ffffff;
+}
 .contact-right form{
     width:100%;
 }
@@ -272,7 +350,7 @@ form .btn2{
     padding: 25px 0;
     background: #ffffff;
     font-weight: 300;
-    margin-top: 110px;
+    margin-top: 20px;
 
 }
 
